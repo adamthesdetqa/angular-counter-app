@@ -1,0 +1,26 @@
+<div class="counter">
+  <h1>COUNTER</h1>
+  <h2>{{ count() }}</h2>
+  <div class="buttons">
+    <button (click)="increment()">INCREMENT</button>
+    <button (click)="decrement()">DECREMENT</button>
+  </div>
+  <div [ngSwitch]="getCounterStatus()">
+    <p *ngSwitchCase="'positive'">The count is positive.</p>
+    <p *ngSwitchCase="'negative'">The count is negative.</p>
+    <p *ngSwitchDefault>The count is zero.</p>
+  </div>
+  @switch (getCounterStatus()) { @case ('positive') {
+  <p [ngStyle]="{ color: 'green' }">The number in positive</p>
+  } @case ('negative') {
+  <p [ngStyle]="{ color: 'red' }">The number is negative</p>
+  } @case ('zero') {
+  <p [ngStyle]="{ color: 'grey' }">The number is zero</p>
+  } } @switch (getCounterStatus()) { @case ('positive') {
+  <p [ngClass]="'positive'">The number in positive</p>
+  } @case ('negative') {
+  <p [ngClass]="'negative'">The number is negative</p>
+  } @case ('zero') {
+  <p [ngClass]="'neutral'">The number is zero</p>
+  } }
+</div>
